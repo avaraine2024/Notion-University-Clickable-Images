@@ -1,60 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Responsive Image Map</title>
+  <title>Clickable Image 2</title>
   <style>
-    .image-container {
+    img {
       max-width: 100%;
-      position: relative;
-    }
-
-    .image-container img {
-      width: 100%;
       height: auto;
       display: block;
-    }
-
-    map area {
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="image-container">
-    <img src="ChatGPT Image May 16, 2025, 04_14_28 PM.png" usemap="#image-map">
-    <map name="image-map">
-      <area target="" alt="Mandrake" title="Mandrake" href="https://www.notion.so/Identity-Values-Traits-Description-1f6a3cabe024808fa56ecd3d58c3640a" coords="150,821,248,816,268,724,241,700,226,644,208,625,239,587,265,559,273,519,279,467,230,468,201,487,178,522,161,557,154,599,147,682,128,728,143,784" shape="poly">
-      <area target="" alt="Sparkle Plant" title="Sparkle Plant" href="https://www.notion.so/Clothes-and-Style-1f4a3cabe024803f800acb345df49375" coords="984,651,1079,637,1115,705,1117,750,1086,788,1107,814,1082,907,1001,911,976,823,960,743" shape="poly">
-      <area target="" alt="Bag" title="Bag" href="https://www.notion.so/Identity-Aesthetic-1f6a3cabe02480988b1fe72cf1411549" coords="1280,834,1242,871,1206,918,1298,941,1298,884,1299,842" shape="poly">
-    </map>
-  </div>
+  <img src="ChatGPT Image May 16, 2025, 04_14_28 PM.png" usemap="#image-map">
 
-  <!-- Make the image map responsive -->
+  <map name="image-map">
+    <area target="" alt="Mandrake" title="Mandrake" href="https://www.notion.so/Identity-Values-Traits-Description-1f6a3cabe024808fa56ecd3d58c3640a" coords="150,821,248,816,268,724,241,700,226,644,208,625,239,587,265,559,273,519,279,467,230,468,201,487,178,522,161,557,154,599,147,682,128,728,143,784" shape="poly">
+    <area target="" alt="Sparkle Plant" title="Sparkle Plant" href="https://www.notion.so/Clothes-and-Style-1f4a3cabe024803f800acb345df49375" coords="984,651,1079,637,1115,705,1117,750,1086,788,1107,814,1082,907,1001,911,976,823,960,743" shape="poly">
+    <area target="" alt="Bag" title="Bag" href="https://www.notion.so/Identity-Aesthetic-1f6a3cabe02480988b1fe72cf1411549" coords="1280,834,1242,871,1206,918,1298,941,1298,884,1299,842" shape="poly">
+  </map>
+
+  <script src="https://unpkg.com/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
   <script>
-    function resizeMap() {
-      const img = document.querySelector('img[usemap]');
-      const mapName = img.useMap.replace('#', '');
-      const map = document.querySelector(`map[name="${mapName}"]`);
-      const areas = map.querySelectorAll('area');
-      const originalWidth = 1920; // Replace with your original image width
-
-      const scale = img.clientWidth / originalWidth;
-
-      areas.forEach(area => {
-        const originalCoords = area.dataset.originalCoords
-          ? area.dataset.originalCoords.split(',').map(Number)
-          : area.coords.split(',').map(Number);
-        if (!area.dataset.originalCoords) {
-          area.dataset.originalCoords = area.coords;
-        }
-        const scaledCoords = originalCoords.map(coord => Math.round(coord * scale));
-        area.coords = scaledCoords.join(',');
-      });
-    }
-
-    window.addEventListener('load', resizeMap);
-    window.addEventListener('resize', resizeMap);
+    window.addEventListener('load', function() {
+      if (window.imageMapResize) {
+        imageMapResize();
+      }
+    });
   </script>
 </body>
 </html>
