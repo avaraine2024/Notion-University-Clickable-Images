@@ -1,4 +1,3 @@
-<!-- Responsive Image Map -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +8,23 @@
       display: block;
     }
   </style>
-  <script>
-    function resizeMap() {
-      const image = document.getElementById("responsive-image");
-      const map = document.querySelector("map[name='image-map']");
-      const areas = map.getElementsByTagName("area");
-      const originalWidth = 1920; // change this if your original image width is different
-      const scale = image.clientWidth / originalWidth;
-
-      for (let i = 0; i < areas.length; i++) {
-        const originalCoords = areas[i].dataset.originalCoords.split(',').map(Number);
-        const scaledCoords = originalCoords.map(coord => Math.round(coord * scale));
-        areas[i].coords = scaledCoords.join(',');
-      }
-    }
-
-    window.addEventListener("load", resizeMap);
-    window.addEventListener("resize", resizeMap);
-  </script>
 </head>
 <body>
   <img id="responsive-image" src="ChatGPT Image May 16, 2025, 12_57_12 PM.png" usemap="#image-map">
 
   <map name="image-map">
-    <area target="" alt="Mandrake" title="Mandrake" href="https://www.notion.so/Goals-and-Growth-1f6a3cabe0248004aee7d6587878c18e" shape="rect" data-original-coords="428,894,275,525">
-    <area target="" alt="Sparkle Plant" title="Sparkle Plant" href="https://www.notion.so/Learning-from-Work-1f4a3cabe02480d4bdaff67716444361" shape="poly" data-original-coords="999,471,900,617,881,731,959,875,1047,883,1116,716,1100,585,1043,515">
-    <area target="" alt="Purple Flower" title="Purple Flower" href="https://www.notion.so/Self-Reflection-1f4a3cabe0248003a8e3fca714822fe5" shape="poly" data-original-coords="1055,231,1215,251,1185,458,1086,461,1009,347,1025,282">
-    <area target="" alt="Strawberry" title="Strawberry" href="https://www.notion.so/TBD-1f7a3cabe0248021aa68fdf75b082936" shape="poly" data-original-coords="1218,507,1313,529,1302,589,1261,629,1215,610,1199,562">
+    <area target="" alt="Mandrake" title="Mandrake" href="https://www.notion.so/Goals-and-Growth-1f6a3cabe0248004aee7d6587878c18e" shape="rect" coords="428,894,275,525">
+    <area target="" alt="Sparkle Plant" title="Sparkle Plant" href="https://www.notion.so/Learning-from-Work-1f4a3cabe02480d4bdaff67716444361" shape="poly" coords="999,471,900,617,881,731,959,875,1047,883,1116,716,1100,585,1043,515">
+    <area target="" alt="Purple Flower" title="Purple Flower" href="https://www.notion.so/Self-Reflection-1f4a3cabe0248003a8e3fca714822fe5" shape="poly" coords="1055,231,1215,251,1185,458,1086,461,1009,347,1025,282">
+    <area target="" alt="Strawberry" title="Strawberry" href="https://www.notion.so/TBD-1f7a3cabe0248021aa68fdf75b082936" shape="poly" coords="1218,507,1313,529,1302,589,1261,629,1215,610,1199,562">
   </map>
-<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
-<script>
-  window.onload = function () {
-    imageMapResize();
-  };
-</script>
+
+  <!-- Load and run the imageMapResizer script -->
+  <script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      imageMapResize();
+    });
+  </script>
 </body>
 </html>
