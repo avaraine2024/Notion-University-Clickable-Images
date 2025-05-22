@@ -1,12 +1,19 @@
-<div style="position: relative; width: 100%; max-width: 1200px; margin: auto;">
-  <img src="ChatGPT Image Coffee Shop.png" usemap="#image-map" style="width: 100%; height: auto; display: block;">
+<div style="position: relative; width: 100%; max-width: 1200px; margin: auto; font-size: 1em;">
+  <!-- The padding-bottom sets aspect ratio: height ÷ width = 1035 ÷ 1384 ≈ 74.8% -->
+  <div style="padding-bottom: 74.8%;"></div>
 
-  <map name="image-map">
-    <area alt="Coffee" title="Coffee" href="https://www.notion.so/Assignment-Tracker-1f6a3cabe0248085a14ed9df4725bf70?pvs=4"
-      coords="317,745,611,994" shape="rect">
-    
-    <area alt="Book" title="Book" href="https://www.notion.so/Glass-Half-Full-1fba3cabe02480ed912ace164f955b6e?pvs=4"
-      coords="709,1008,975,827,737,835,709,1009,967,1009,1183,960,968,816,652,854,633,890,702,1012" shape="poly">
-  </map>
+  <!-- Background image absolutely positioned -->
+  <img src="Coffee-Shop.png"
+       alt="Coffee Shop"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+
+  <!-- Clickable Coffee Area -->
+  <a href="https://www.notion.so/Assignment-Tracker-1f6a3cabe0248085a14ed9df4725bf70?pvs=4"
+     style="position: absolute; top: 49em; left: 13.5em; width: 10.5em; height: 7.5em; display: block; z-index: 2;"
+     title="Coffee"></a>
+
+  <!-- Clickable Book Area -->
+  <a href="https://www.notion.so/Glass-Half-Full-1fba3cabe02480ed912ace164f955b6e?pvs=4"
+     style="position: absolute; top: 65em; left: 25.5em; width: 10em; height: 6em; display: block; z-index: 2;"
+     title="Book"></a>
 </div>
-
